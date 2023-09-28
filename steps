@@ -1,0 +1,10 @@
+// Deploy
+gcloud app deploy app1/app.yaml --version=app1
+gcloud app deploy app2/app.yaml --version=app2
+
+
+// Rollback
+gcloud app services set-traffic vaibhav-training --splits=app1=100
+
+// Canary
+gcloud app services set-traffic vaibhav-training --splits=app1=70,app2=30
